@@ -17,11 +17,10 @@
 
 -->
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="">
-
     <resultMap id="personMap" type="Person">
         <id property="id" column="id"/>
         <result property="firstName" column="firstName"/>
@@ -29,7 +28,8 @@
     </resultMap>
 
 
-    <select id="selectAllByType" resultMap="personMap" parameterType="org.apache.ibatis.submitted.ognl_enum.Person$Type">
+    <select id="selectAllByType" resultMap="personMap"
+            parameterType="org.apache.ibatis.submitted.ognl_enum.Person$Type">
         SELECT id, firstName, lastName, personType
         FROM person
         <where>
@@ -41,7 +41,8 @@
             </if>
         </where>
     </select>
-    <select id="selectAllByTypeNameAttribute" resultMap="personMap" parameterType="org.apache.ibatis.submitted.ognl_enum.Person$Type">
+    <select id="selectAllByTypeNameAttribute" resultMap="personMap"
+            parameterType="org.apache.ibatis.submitted.ognl_enum.Person$Type">
         SELECT id, firstName, lastName, personType
         FROM person
         <where>
@@ -54,7 +55,8 @@
         </where>
     </select>
 
-    <select id="selectAllByTypeWithInterface" resultMap="personMap" parameterType="org.apache.ibatis.submitted.ognl_enum.PersonMapper$PersonType">
+    <select id="selectAllByTypeWithInterface" resultMap="personMap"
+            parameterType="org.apache.ibatis.submitted.ognl_enum.PersonMapper$PersonType">
         SELECT id, firstName, lastName, personType
         FROM person
         <where>
@@ -66,7 +68,8 @@
             </if>
         </where>
     </select>
-    <select id="selectAllByTypeNameAttributeWithInterface" resultMap="personMap" parameterType="org.apache.ibatis.submitted.ognl_enum.PersonMapper$PersonType">
+    <select id="selectAllByTypeNameAttributeWithInterface" resultMap="personMap"
+            parameterType="org.apache.ibatis.submitted.ognl_enum.PersonMapper$PersonType">
         SELECT id, firstName, lastName, personType
         FROM person
         <where>
